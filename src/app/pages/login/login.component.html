@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+        <div class="login__container">
+            <div class="image_title">
+                <img src="assets/white_logo.png" alt="Logo">
+                <h3>Log in to Spotify</h3>
+            </div>
+            <div class="login__options">
+                <button type="button"><img src="assets/google_logo.png" alt="GoogleLogo" width="25px">&nbsp; Continue with Google</button>
+                <button type="button"><img src="assets/facebook_logo.png" alt="GoogleLogo" width="20px">&nbsp; Continue with Facebook</button>
+                <button type="button"><img src="assets/apple_logo.png" alt="GoogleLogo" width="24px">&nbsp; Continue with Apple</button>
+                <button type="button">Continue with Phone number</button>
+            </div>
+            <hr style="background-color: white; width:70%;text-align:left;margin-left:0" />
+            <div>
+                <label><strong>Email address or username</strong></label> <br />
+                <input [formControl]="usernameFormControl" type="text" placeholder="Email address or username">
+            </div>
+            <div>
+                <label><strong>Password</strong></label> <br />
+                <input [formControl]="passwordFormControl" type="password" placeholder="Password">
+            </div>
+            <div class="form-check form-switch">
+                <input mdbCheckbox class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [checked]="true" style="background-color: #1ED760; border: 0px" />
+                <label for="remember_me"><span><small>Remember me</small></span></label>
+            </div>
+            <button type="button">
+                <span>Log In</span>
+            </button>
+            <label><small><a [style.textDecoration]="'underline'"><b>Forgot your password?</b></a></small></label>
+            <hr style="background-color: white; width:70%;text-align:left;margin-left:0" />
+            <div class="signup_option">
+                <label><small style="color: lightgray;">Don't have an account? &nbsp;</small></label>
+                <label><small><a [style.textDecoration]="'underline'"><b>Sign up for Spotify</b></a></small></label>
+            </div>
+        </div>
+    </form>
+</div>
